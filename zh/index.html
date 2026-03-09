@@ -1,1 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finca S'Espinal — 梅诺卡岛 · 顶级庄园</title>
+<meta name="description" content="Finca S'Espinal — 梅诺卡岛圣克利门特30,000平方米顶级庄园。传统别墅配私人泳池、15栋附属建筑及自有水井。联合国教科文组织生物圈保护区。1,950,000欧元。">
+<meta name="keywords" content="梅诺卡岛房产出售, 西班牙豪华庄园, 巴利阿里群岛别墅, 梅诺卡岛投资, menorca luxury villa">
+<meta property="og:title" content="Finca S'Espinal — 梅诺卡岛顶级庄园">
+<meta property="og:description" content="30,000平方米 · 联合国教科文组织保护区 · 传统别墅 · 泳池 · 15栋建筑 · 1,950,000欧元">
+<meta property="og:image" content="../hero-panorama.jpg">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<!-- Google Search Console: sustituye XXXXXXXXXXXXXXXXX por tu código de verificación -->
+<meta name="google-site-verification" content="XXXXXXXXXXXXXXXXX">
+<!-- Google Analytics: sustituye G-XXXXXXXXXX por tu ID de medición -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & TOKENS ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+img { display:block; width:100%; }
+:root {
+  --cream: #f5f0e8;
+  --sand:  #e8dcc8;
+  --stone: #c4b49a;
+  --bg:    #18150f;
+  --bg2:   #100e09;
+  --olive: #3a4729;
+  --gold:  #b8955a;
+  --goldl: #d4ad70;
+  --white: #faf8f4;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Jost', system-ui, sans-serif;
+}
+body { font-family:var(--sans); background:var(--bg); color:var(--cream); overflow-x:hidden; line-height:1; }
 
+/* ── NAV ── */
+nav {
+  position:fixed; inset:0 0 auto; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:24px 64px;
+  transition:background .5s, padding .4s, border .5s;
+}
+nav.stuck {
+  background:rgba(24,21,15,.97);
+  backdrop-filter:blur(16px);
+  padding:14px 64px;
+  border-bottom:1px solid rgba(184,149,90,.15);
+}
+.nav-logo { font-family:var(--serif); font-size:1.3rem; letter-spacing:.12em; color:var(--cream); text-decoration:none; }
+.nav-logo b { color:var(--gold); font-weight:400; }
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a { font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(245,240,232,.6); text-decoration:none; transition:color .3s; }
+.nav-links a:hover { color:var(--gold); }
+.nav-cta { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); padding:10px 22px; text-decoration:none; transition:all .3s; }
+.nav-cta:hover { background:var(--gold); color:var(--bg); }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.lang-sel { display:flex; gap:4px; align-items:center; }
+.lang-sel a { font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(245,240,232,.38); text-decoration:none; padding:4px 7px; border:1px solid transparent; transition:all .3s; border-radius:2px; }
+.lang-sel a:hover { color:var(--gold); border-color:rgba(184,149,90,.3); }
+.lang-sel a.active { color:var(--gold); border-color:rgba(184,149,90,.45); }
+@media(max-width:820px){
+  nav { padding:16px 22px; }
+  nav.stuck { padding:12px 22px; }
+  .nav-links { display:none; }
+  .lang-sel a { font-size:.58rem; padding:3px 5px; }
+}
+
+/* ── HERO ── */
+.hero {
+  position:relative; min-height:100svh;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:url('../hero-panorama.jpg') center 40%/cover no-repeat;
+  transform:scale(1.06);
+  animation:zoom 20s ease-out forwards;
+}
+@keyframes zoom { to { transform:scale(1); } }
+.hero-veil {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom,
+    rgba(24,21,15,.18) 0%,
+    rgba(24,21,15,.08) 30%,
+    rgba(24,21,15,.6)  78%,
+    rgba(24,21,15,1)  100%);
+}
+.hero-body {
+  position:relative; z-index:2;
+  text-align:center; padding:0 24px;
+  animation:up 1.6s cubic-bezier(.16,1,.3,1) .2s both;
+}
+@keyframes up { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+.tag {
+  display:inline-flex; align-items:center; gap:12px;
+  font-size:.62rem; letter-spacing:.34em; text-transform:uppercase; color:var(--gold);
+  margin-bottom:20px;
+}
+.tag::before,.tag::after { content:''; width:32px; height:1px; background:var(--gold); opacity:.5; }
+.hero-h1 { font-family:var(--serif); font-size:clamp(3rem,9vw,7.5rem); font-weight:300; line-height:.92; color:var(--white); }
+.hero-h1 em { font-style:italic; color:var(--sand); }
+.hero-place { font-family:var(--serif); font-size:clamp(1rem,2vw,1.5rem); font-style:italic; color:var(--stone); letter-spacing:.07em; margin:.5rem 0 2.4rem; }
+.price-box { display:inline-flex; flex-direction:column; align-items:center; gap:4px; border:1px solid rgba(184,149,90,.35); padding:14px 36px; margin-bottom:2.4rem; }
+.price-lbl { font-size:.58rem; letter-spacing:.28em; text-transform:uppercase; color:var(--stone); }
+.price-amt { font-family:var(--serif); font-size:1.9rem; color:var(--goldl); }
+.ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.btn-fill { font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; background:var(--gold); color:var(--bg); padding:14px 36px; text-decoration:none; font-family:var(--sans); font-weight:500; transition:all .3s; }
+.btn-fill:hover { background:var(--goldl); transform:translateY(-2px); }
+.btn-border { font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; background:transparent; color:var(--cream); border:1px solid rgba(245,240,232,.32); padding:14px 36px; text-decoration:none; font-family:var(--sans); font-weight:300; transition:all .3s; }
+.btn-border:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+.scroll-hint { position:absolute; bottom:32px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2; }
+.scroll-hint span { font-size:.56rem; letter-spacing:.3em; text-transform:uppercase; color:rgba(245,240,232,.3); }
+.scroll-line { width:1px; height:44px; background:linear-gradient(to bottom,rgba(184,149,90,.65),transparent); animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:.35} 50%{opacity:1} }
+
+/* ── STATS ── */
+.stats {
+  background:var(--olive);
+  display:flex; flex-wrap:wrap; justify-content:center;
+  border-bottom:1px solid rgba(184,149,90,.12);
+}
+.stat { display:flex; flex-direction:column; align-items:center; padding:28px 44px; gap:5px; border-right:1px solid rgba(184,149,90,.15); }
+.stat:last-child { border-right:none; }
+.stat-n { font-family:var(--serif); font-size:2rem; color:var(--goldl); line-height:1; }
+.stat-l { font-size:.58rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(245,240,232,.48); text-align:center; }
+@media(max-width:820px){
+  .stat { padding:20px 18px; border-right:none; border-bottom:1px solid rgba(184,149,90,.1); width:50%; }
+  .stat:nth-child(odd) { border-right:1px solid rgba(184,149,90,.1); }
+}
+
+/* ── SHARED SECTION PARTS ── */
+.eyebrow { font-size:.6rem; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:flex; align-items:center; gap:12px; }
+.eyebrow::after { content:''; flex:1; max-width:160px; height:1px; background:linear-gradient(to right,rgba(184,149,90,.4),transparent); }
+.s-title { font-family:var(--serif); font-size:clamp(1.9rem,3.6vw,3.3rem); font-weight:300; line-height:1.1; color:var(--white); margin-bottom:1.2rem; }
+.s-title em { font-style:italic; color:var(--sand); }
+.s-body { font-size:.9rem; font-weight:300; line-height:1.85; color:rgba(245,240,232,.6); }
+.gold-rule { width:48px; height:1px; background:var(--gold); opacity:.5; margin:22px 0; }
+
+/* ── SPLIT SECTIONS (texto + foto, lado a lado) ── */
+/* Usan aspect-ratio en la foto para que nunca haya huecos */
+.split { display:grid; grid-template-columns:1fr 1fr; }
+.split-copy { background:var(--bg); padding:88px 72px; display:flex; flex-direction:column; justify-content:center; }
+.split-copy.dark2 { background:var(--bg2); }
+.split-photo { position:relative; overflow:hidden; }
+.split-photo img { width:100%; height:100%; object-fit:cover; transition:transform 8s ease; }
+.split-photo:hover img { transform:scale(1.04); }
+/* Esto es la clave: la foto siempre tiene mínimo la misma altura que su columna hermana */
+.split { align-items:stretch; }
+@media(max-width:820px){
+  .split { grid-template-columns:1fr; }
+  .split-photo { aspect-ratio:16/9; order:-1 !important; }
+  .split-photo img { height:100%; }
+  .split-copy { padding:52px 22px; order:1 !important; }
+}
+
+/* ── GALLERY ── */
+.gallery-wrap { background:var(--bg2); padding:80px 32px; }
+.gallery-head { padding:0 4px 44px; }
+/* Grid con aspect-ratio en cada celda → nunca huecos */
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5px;
+}
+.g-cell { position:relative; overflow:hidden; }
+.g-cell.tall { grid-row:span 2; }
+.g-cell.wide { grid-column:span 2; }
+/* Aspect-ratio por defecto */
+.g-cell { aspect-ratio:4/3; }
+.g-cell.tall { aspect-ratio:unset; }  /* tall se estira con el grid */
+.g-cell img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.25,.46,.45,.94); }
+.g-cell:hover img { transform:scale(1.07); }
+.g-lbl {
+  position:absolute; inset:auto 0 0 0; padding:16px 14px;
+  background:linear-gradient(to top,rgba(18,14,8,.85),transparent);
+  font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(245,240,232,.52);
+  transform:translateY(100%); transition:transform .38s;
+}
+.g-cell:hover .g-lbl { transform:translateY(0); }
+/* Tall mantiene su altura igualando las 2 filas del resto */
+.gallery-grid { grid-auto-rows:minmax(220px,auto); }
+@media(max-width:820px){
+  .gallery-grid { grid-template-columns:1fr 1fr; grid-auto-rows:180px; }
+  .g-cell.tall { grid-row:span 1; aspect-ratio:4/3; }
+  .g-cell.wide { grid-column:span 2; }
+  .g-cell { aspect-ratio:unset; }
+}
+
+/* ── FEATURES ── */
+.features-wrap { background:var(--olive); padding:88px 52px; }
+.feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:56px; }
+.feat-card { background:rgba(12,10,7,.42); padding:40px 32px; border-top:2px solid transparent; transition:border-color .4s, background .4s; }
+.feat-card:hover { border-top-color:var(--gold); background:rgba(12,10,7,.62); }
+.feat-icon { font-size:1.5rem; display:block; margin-bottom:16px; }
+.feat-h { font-family:var(--serif); font-size:1.3rem; color:var(--white); margin-bottom:10px; }
+.feat-p { font-size:.82rem; font-weight:300; line-height:1.75; color:rgba(245,240,232,.5); }
+.feat-ul { margin-top:12px; list-style:none; display:flex; flex-direction:column; gap:6px; }
+.feat-ul li { font-size:.78rem; font-weight:300; color:rgba(245,240,232,.44); padding-left:14px; position:relative; }
+.feat-ul li::before { content:'—'; position:absolute; left:0; color:var(--gold); opacity:.5; }
+@media(max-width:820px){ .feat-grid { grid-template-columns:1fr; } }
+
+/* ── LAND SPECS ── */
+.land-specs { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px; }
+.lspec { padding:16px; border:1px solid rgba(184,149,90,.1); border-left:2px solid var(--gold); }
+.lspec-v { font-family:var(--serif); font-size:1.45rem; color:var(--goldl); margin-bottom:3px; }
+.lspec-l { font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,240,232,.4); }
+
+/* ── LOCATION ── */
+.location-wrap { background:var(--bg2); padding:88px 56px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.loc-map { border:1px solid rgba(184,149,90,.16); overflow:hidden; position:relative; }
+.loc-map img { width:100%; display:block; opacity:.88; transition:opacity .4s; }
+.loc-map:hover img { opacity:1; }
+.loc-map::after { content:'Sant Climent · Mahón · Menorca'; position:absolute; inset:auto 0 0; padding:14px; background:linear-gradient(to top,rgba(10,9,6,.9),transparent); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); text-align:center; }
+.loc-list { display:flex; flex-direction:column; margin-top:30px; }
+.loc-row { display:flex; gap:16px; align-items:flex-start; padding:16px; border-bottom:1px solid rgba(184,149,90,.08); transition:background .3s; }
+.loc-row:hover { background:rgba(184,149,90,.04); }
+.loc-min { font-family:var(--serif); font-size:1.4rem; color:var(--gold); min-width:48px; line-height:1.2; }
+.loc-n { font-size:.86rem; font-weight:400; color:var(--cream); margin-bottom:3px; }
+.loc-d { font-size:.73rem; font-weight:300; color:rgba(245,240,232,.4); }
+@media(max-width:820px){ .location-wrap { grid-template-columns:1fr; padding:64px 22px; gap:32px; } }
+
+/* ── INVEST ── */
+.invest-wrap { background:var(--olive); padding:88px 52px; }
+.invest-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:56px; }
+.i-card { background:rgba(12,10,7,.44); padding:44px 36px; position:relative; overflow:hidden; }
+.i-card::before { content:attr(data-n); position:absolute; top:-8px; right:16px; font-family:var(--serif); font-size:5rem; color:rgba(184,149,90,.055); line-height:1; pointer-events:none; }
+.i-h { font-family:var(--serif); font-size:1.4rem; color:var(--white); margin-bottom:12px; }
+.i-p { font-size:.82rem; font-weight:300; line-height:1.8; color:rgba(245,240,232,.5); }
+.i-tag { display:inline-block; margin-top:16px; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); border-bottom:1px solid rgba(184,149,90,.35); padding-bottom:2px; }
+@media(max-width:820px){ .invest-grid { grid-template-columns:1fr; } }
+
+/* ── CONTACT ── */
+.contact-wrap { background:var(--bg); padding:110px 52px; text-align:center; position:relative; overflow:hidden; }
+.contact-wrap::before { content:''; position:absolute; top:-160px; left:50%; transform:translateX(-50%); width:520px; height:520px; background:radial-gradient(circle,rgba(184,149,90,.05) 0%,transparent 70%); pointer-events:none; }
+.c-title { font-family:var(--serif); font-size:clamp(2.2rem,4.2vw,4.2rem); font-weight:300; color:var(--white); margin-bottom:16px; line-height:1.1; }
+.c-title em { font-style:italic; color:var(--goldl); }
+.c-sub { font-size:.86rem; font-weight:300; color:rgba(245,240,232,.46); max-width:440px; margin:0 auto 48px; line-height:1.8; }
+.c-form { max-width:540px; margin:0 auto; display:flex; flex-direction:column; gap:13px; }
+.f-row { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+.f-field { display:flex; flex-direction:column; gap:7px; }
+.f-field label { font-size:.58rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(245,240,232,.35); text-align:left; }
+.f-field input,.f-field select,.f-field textarea { background:rgba(245,240,232,.04); border:1px solid rgba(245,240,232,.09); border-bottom:1px solid rgba(184,149,90,.25); color:var(--cream); padding:12px 15px; font-family:var(--sans); font-size:.86rem; font-weight:300; outline:none; transition:border-color .3s,background .3s; resize:none; appearance:none; }
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus { border-color:rgba(184,149,90,.5); background:rgba(245,240,232,.06); }
+.f-field select option { background:var(--bg); color:var(--cream); }
+.f-submit { margin-top:6px; background:var(--gold); color:var(--bg); border:none; padding:15px 52px; font-family:var(--sans); font-size:.68rem; font-weight:500; letter-spacing:.24em; text-transform:uppercase; transition:all .3s; align-self:center; cursor:pointer; }
+.f-submit:hover { background:var(--goldl); transform:translateY(-2px); }
+.c-divider { display:flex; align-items:center; gap:16px; margin:40px auto 32px; max-width:540px; }
+.c-divider::before,.c-divider::after { content:''; flex:1; height:1px; background:rgba(245,240,232,.07); }
+.c-divider span { font-size:.58rem; letter-spacing:.22em; color:rgba(245,240,232,.26); text-transform:uppercase; white-space:nowrap; }
+.c-direct { display:flex; gap:40px; justify-content:center; flex-wrap:wrap; }
+.c-di { display:flex; flex-direction:column; gap:4px; align-items:center; }
+.c-di-lbl { font-size:.56rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(245,240,232,.26); }
+.c-di-val { font-family:var(--serif); font-size:1rem; color:var(--goldl); text-decoration:none; transition:color .3s; }
+.c-di-val:hover { color:var(--gold); }
+@media(max-width:820px){ .contact-wrap { padding:72px 22px; } .f-row { grid-template-columns:1fr; } }
+
+/* ── FOOTER ── */
+footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(184,149,90,.09); }
+.ft-logo { font-family:var(--serif); font-size:1rem; letter-spacing:.1em; color:rgba(245,240,232,.35); }
+.ft-logo b { color:var(--gold); opacity:.62; font-weight:400; }
+.ft-copy { font-size:.6rem; letter-spacing:.08em; color:rgba(245,240,232,.16); }
+.ft-badge { font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(184,149,90,.42); border:1px solid rgba(184,149,90,.16); padding:7px 13px; }
+@media(max-width:820px){ footer { flex-direction:column; gap:12px; padding:26px 22px; text-align:center; } }
+
+/* ── WHATSAPP BUTTON ── */
+.wa-btn {
+  position:fixed; bottom:28px; left:28px; z-index:300;
+  display:flex; align-items:center; gap:10px;
+  background:#25D366; color:#fff;
+  padding:12px 20px 12px 16px; border-radius:50px;
+  text-decoration:none; font-family:var(--sans);
+  font-size:.72rem; font-weight:500; letter-spacing:.06em;
+  box-shadow:0 4px 20px rgba(37,211,102,.35);
+  transition:all .3s;
+}
+.wa-btn:hover { background:#1ebe5d; transform:translateY(-3px); box-shadow:0 8px 28px rgba(37,211,102,.45); }
+.wa-btn svg { width:22px; height:22px; flex-shrink:0; }
+.wa-main { font-size:.72rem; font-weight:500; line-height:1; }
+.wa-sub { font-size:.58rem; opacity:.82; margin-top:2px; }
+@media(max-width:820px){ .wa-text { display:none; } .wa-btn { padding:13px; border-radius:50%; bottom:22px; left:22px; } }
+
+/* ── NOTIF ── */
+.notif { position:fixed; bottom:24px; right:24px; background:var(--olive); border:1px solid rgba(184,149,90,.35); border-left:3px solid var(--gold); padding:16px 22px; z-index:300; transform:translateY(110px); opacity:0; transition:all .5s cubic-bezier(.16,1,.3,1); max-width:300px; }
+.notif.on { transform:translateY(0); opacity:1; }
+.notif-h { font-family:var(--serif); font-size:1rem; color:var(--white); margin-bottom:4px; }
+.notif-b { font-size:.73rem; font-weight:300; color:rgba(245,240,232,.55); line-height:1.5; }
+
+/* ── REVEAL ANIMATION ── */
+/* Visible por defecto — solo anima si JS carga correctamente */
+.reveal { transition:opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1); }
+.js-ready .reveal { opacity:0; transform:translateY(24px); }
+.js-ready .reveal.in { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NOTIF -->
+<div class="notif" id="notif">
+  <div class="notif-h">顶级庄园</div>
+  <div class="notif-b">索取庄园完整资料与文件。</div>
+</div>
+
+<!-- WHATSAPP FLOTANTE: sustituye XXXXXXXXXXX por el número con prefijo país sin espacios ni + -->
+<a href="https://wa.me/34600000000?text=Hola%2C%20me%20interesa%20Finca%20S'Espinal%20en%20Menorca.%20%C2%BFPueden%20enviarme%20m%C3%A1s%20informaci%C3%B3n%3F" class="wa-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <div class="wa-text">
+    <div class="wa-main">WhatsApp咨询</div>
+    <div class="wa-sub">24小时内回复</div>
+  </div>
+</a>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Finca <b>S'Espinal</b></a>
+  <ul class="nav-links">
+    <li><a href="#propiedad">庄园介绍</a></li>
+    <li><a href="#galeria">图片库</a></li>
+    <li><a href="#ubicacion">地理位置</a></li>
+    <li><a href="#inversion">投资价值</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">获取资讯</a>
+  <div class="nav-right">
+    <div class="lang-sel">
+      <a href="/Finca-S-espinal/" title="Español">ES</a>
+      <a href="/Finca-S-espinal/en/" title="English">EN</a>
+      <a href="/Finca-S-espinal/de/" title="Deutsch">DE</a>
+      <a href="/Finca-S-espinal/ru/" title="Русский">RU</a>
+      <a href="/Finca-S-espinal/zh/" class="active" title="中文">ZH</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-body">
+    <div class="tag">千载难逢的机会 · 梅诺卡岛 · 联合国教科文组织生物圈</div>
+    <h1 class="hero-h1">Finca<br><em>S'Espinal</em></h1>
+    <p class="hero-place">Sant Climent · Mahón · Menorca</p>
+    <div class="price-box">
+      <span class="price-lbl">售价</span>
+      <span class="price-amt">1.950.000 €</span>
+    </div>
+    <div class="ctas">
+      <a href="#contacto" class="btn-fill">立即咨询</a>
+      <a href="#galeria"  class="btn-border">浏览庄园</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>探索</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════ STATS ══════════ -->
+<div class="stats">
+  <div class="stat"><span class="stat-n">30.000</span><span class="stat-l">平方米土地</span></div>
+  <div class="stat"><span class="stat-n">240</span><span class="stat-l">平方米主别墅</span></div>
+  <div class="stat"><span class="stat-n">15</span><span class="stat-l">栋附属建筑</span></div>
+  <div class="stat"><span class="stat-n">4</span><span class="stat-l">间卧室</span></div>
+  <div class="stat"><span class="stat-n">1891</span><span class="stat-l">年建造</span></div>
+</div>
+
+<!-- ══════════ INTRO: texto + foto ══════════ -->
+<div class="split" id="propiedad">
+  <div class="split-copy reveal">
+    <div class="eyebrow">庄园介绍</div>
+    <h2 class="s-title">梅诺卡岛中心的<br><em>活态遗产</em></h2>
+    <div class="gold-rule"></div>
+    <p class="s-body">Finca S'Espinal是一处位于梅诺卡岛圣克利门特的30,000平方米顶级农业庄园，距马翁市仅数分钟车程。一栋两层传统梅诺卡别墅、私人泳池、高品质果园、自有水井及15栋附属建筑，构成巴利阿里群岛房地产市场上最为独特的投资机会之一。</p>
+    <p class="s-body" style="margin-top:16px;">目前正在办理地块分割手续，提供完全私密性、自主供水及联合国教科文组织生物圈保护区内的优越乡村环境。</p>
+    <div style="margin-top:32px;"><a href="#contacto" class="btn-fill">索取完整资料</a></div>
+  </div>
+  <div class="split-photo" style="order:1;">
+    <img src="../intro-perimetro.jpg" alt="Vista aérea con perímetro de Finca S'Espinal" loading="lazy">
+  </div>
+</div>
+
+<!-- ══════════ GALLERY ══════════ -->
+<div class="gallery-wrap" id="galeria">
+  <div class="gallery-head reveal">
+    <div class="eyebrow">图片库</div>
+    <h2 class="s-title">令人<em>心动</em>的空间</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-cell tall">
+      <img src="../gallery-patio-arco.jpg" alt="Patio con arco de piedra centenaria" loading="lazy">
+      <div class="g-lbl">主庭院 · 百年石拱</div>
+    </div>
+    <div class="g-cell">
+      <img src="../gallery-terraza-mola.jpg" alt="Terraza exterior con mola de molino" loading="lazy">
+      <div class="g-lbl">室外露台</div>
+    </div>
+    <div class="g-cell">
+      <img src="../gallery-cocina.jpg" alt="Cocina tradicional menorquina" loading="lazy">
+      <div class="g-lbl">传统厨房</div>
+    </div>
+    <div class="g-cell wide">
+      <img src="../gallery-drone-horizonte.jpg" alt="Drone horizonte de Menorca" loading="lazy">
+      <div class="g-lbl">航拍 · 梅诺卡地平线</div>
+    </div>
+    <div class="g-cell">
+      <img src="../gallery-comedor.jpg" alt="Comedor con acceso al patio" loading="lazy">
+      <div class="g-lbl">餐厅 · 通往庭院</div>
+    </div>
+    <div class="g-cell">
+      <img src="../gallery-piscina-olivos.jpg" alt="Piscina privada con olivos" loading="lazy">
+      <div class="g-lbl">私人泳池</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ FEATURES ══════════ -->
+<div class="features-wrap">
+  <div class="reveal">
+    <div class="eyebrow">庄园配置</div>
+    <h2 class="s-title">一处<em>完整</em>的庄园</h2>
+  </div>
+  <div class="feat-grid">
+    <div class="feat-card reveal">
+      <span class="feat-icon">🏛</span>
+      <div class="feat-h">传统梅诺卡别墅</div>
+      <p class="feat-p">19世纪正宗建筑，保持可居住状态，具有无可复制的历史与特色。</p>
+      <ul class="feat-ul">
+        <li>4间卧室（2间双人房，2间单人房）</li>
+        <li>2间浴室 · 带壁炉的客厅</li>
+        <li>传统厨房 · 独立餐厅</li>
+        <li>全景露台 · 2间阁楼</li>
+      </ul>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">🌿</span>
+      <div class="feat-h">肥沃土地与自给自足</div>
+      <p class="feat-p">高质量石灰质农业土壤，配备灌溉系统及带役权的自有水井。</p>
+      <ul class="feat-ul">
+        <li>30,000平方米正在办理分割</li>
+        <li>自有水井 · 灌溉系统</li>
+        <li>在用温室</li>
+        <li>马厩 · 动物区</li>
+      </ul>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">🏗</span>
+      <div class="feat-h">15 栋附属建筑</div>
+      <p class="feat-p">附属建筑具有住宅、农业或旅游等多种使用可能性。</p>
+      <ul class="feat-ul">
+        <li>3间宽敞车库</li>
+        <li>仓库 · 棚屋 · 工作室</li>
+        <li>泳池附属设施</li>
+        <li>农业工具设备</li>
+      </ul>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">🏊</span>
+      <div class="feat-h">户外休闲区</div>
+      <p class="feat-p">拥有百年橄榄树的花园、私人泳池、门廊和露台，尽享梅诺卡田园风光。</p>
+      <ul class="feat-ul">
+        <li>Piscina privada</li>
+        <li>Jardín con olivos y palmeras</li>
+        <li>Porches y terrazas</li>
+        <li>户外柴火烤炉</li>
+      </ul>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">⚡</span>
+      <div class="feat-h">完善的基础设施</div>
+      <p class="feat-p">所有服务齐全，道路通达状况良好，完全正常运作。</p>
+      <ul class="feat-ul">
+        <li>电力已接通</li>
+        <li>自有水井含役权</li>
+        <li>直接车行通道</li>
+        <li>灌溉系统已安装</li>
+      </ul>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">📋</span>
+      <div class="feat-h">法律状态</div>
+      <p class="feat-p">房产合规，所有城市规划许可齐全。地块分割程序进行中。</p>
+      <ul class="feat-ul">
+        <li>用地分区：农村农业用地</li>
+        <li>住宅用途 + 农业开发</li>
+        <li>30,000平方米地块分割</li>
+        <li>完整文件资料可提供</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LAND: foto + texto ══════════ -->
+<div class="split">
+  <div class="split-photo" style="order:-1;">
+    <img src="../land-drone-wide.jpg" alt="Vista drone de la finca y entorno de Menorca" loading="lazy">
+  </div>
+  <div class="split-copy dark2 reveal" style="order:1;">
+    <div class="eyebrow">土地</div>
+    <h2 class="s-title">30,000平方米的<em>无限可能</em></h2>
+    <div class="gold-rule"></div>
+    <p class="s-body">在梅诺卡岛，受保护的农村土地是稀缺且不可替代的资产。该岛以法律形式严格限制城市开发，使Finca S'Espinal成为联合国教科文组织生物圈保护区内价值不断提升的遗产。</p>
+    <div class="land-specs">
+      <div class="lspec"><div class="lspec-v">30.000 m²</div><div class="lspec-l">总面积</div></div>
+      <div class="lspec"><div class="lspec-v">Rústico</div><div class="lspec-l">土地分类</div></div>
+      <div class="lspec"><div class="lspec-v">Calizo</div><div class="lspec-l">土壤类型</div></div>
+      <div class="lspec"><div class="lspec-v">UNESCO</div><div class="lspec-l">生物圈保护区</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LOCATION ══════════ -->
+<div class="location-wrap" id="ubicacion">
+  <div class="reveal">
+    <div class="eyebrow">地理位置</div>
+    <h2 class="s-title">位于<em>梅诺卡岛</em>的中心</h2>
+    <div class="gold-rule"></div>
+    <p class="s-body">圣克利门特是梅诺卡岛东南部最宁静、最受重视的市镇之一。庄园将完全的田园宁静与便捷通达岛上所有服务的优势完美结合。</p>
+    <div class="loc-list">
+      <div class="loc-row"><div class="loc-min">5'</div><div><div class="loc-n">梅诺卡机场</div><div class="loc-d">直飞欧洲各地</div></div></div>
+      <div class="loc-row"><div class="loc-min">8'</div><div><div class="loc-n">马翁 · 岛屿首府</div><div class="loc-d">服务设施、美食与历史港口</div></div></div>
+      <div class="loc-row"><div class="loc-min">10'</div><div><div class="loc-n">南部海湾 · 原始海滩</div><div class="loc-d">Cala en Porter, Son Bou, Binibèquer</div></div></div>
+      <div class="loc-row"><div class="loc-min">35'</div><div><div class="loc-n">Ciutadella</div><div class="loc-d">岛屿西部的历史瑰宝</div></div></div>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="loc-map">
+      <img src="../location-map.jpg" alt="Mapa localización Finca S'Espinal" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ INVESTMENT ══════════ -->
+<div class="invest-wrap" id="inversion">
+  <div class="reveal">
+    <div class="eyebrow">为何投资</div>
+    <h2 class="s-title">一项<em>稳健</em>而不可复制的投资</h2>
+  </div>
+  <div class="invest-grid">
+    <div class="i-card reveal" data-n="01">
+      <div class="i-h">受保护岛屿上的稀缺资产</div>
+      <p class="i-p">梅诺卡岛自1993年起被列为生物圈保护区。法规严格限制农村土地开发，保证了像S'Espinal这样房产的稀缺性和持续增值。</p>
+      <span class="i-tag">法律保护 · 持续增值</span>
+    </div>
+    <div class="i-card reveal" data-n="02">
+      <div class="i-h">多种用途与可能性</div>
+      <p class="i-p">顶级私人住宅、豪华农业旅游、有机种植或私人静修所。15栋附属建筑开辟了独特的多元增值可能性。</p>
+      <span class="i-tag">住宅 · 旅游 · 农业</span>
+    </div>
+    <div class="i-card reveal" data-n="03">
+      <div class="i-h">持续扩张的豪华市场</div>
+      <p class="i-p">巴利阿里群岛豪华房产市场持续受到高净值欧洲买家的稳定需求，梅诺卡岛因其相较伊维萨岛或马略卡岛更为原真的特质而备受青睐。</p>
+      <span class="i-tag">高端市场 · 强劲需求</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CONTACT ══════════ -->
+<div class="contact-wrap" id="contacto">
+  <div class="reveal">
+    <div class="tag" style="justify-content:center;">保密咨询</div>
+    <h2 class="c-title">您对<br><em>Finca S'Espinal</em>感兴趣吗？</h2>
+    <p class="c-sub">索取保密资料、完整法律文件，或预约私人参观。</p>
+  </div>
+  <form class="c-form reveal" onsubmit="submitForm(event)">
+    <div class="f-row">
+      <div class="f-field"><label>姓名</label><input type="text" placeholder="您的姓名" required></div>
+      <div class="f-field"><label>姓氏</label><input type="text" placeholder="您的姓氏"></div>
+    </div>
+    <div class="f-row">
+      <div class="f-field"><label>Email</label><input type="email" placeholder="email@ejemplo.com" required></div>
+      <div class="f-field"><label>电话</label><input type="tel" placeholder="+34 000 000 000"></div>
+    </div>
+    <div class="f-field">
+      <label>主要兴趣</label>
+      <select>
+        <option value="">请选择</option>
+        <option>私人住宅</option>
+        <option>投资 / 回报</option>
+        <option>农业旅游项目</option>
+        <option>农业用途</option>
+        <option>其他用途</option>
+      </select>
+    </div>
+    <div class="f-field"><label>留言（选填）</label><textarea rows="4" placeholder="请简要说明您对该庄园的兴趣..."></textarea></div>
+    <button type="submit" class="f-submit">立即咨询</button>
+  </form>
+  <div class="c-divider"><span>或直接联系我们</span></div>
+  <div class="c-direct">
+    <div class="c-di"><span class="c-di-lbl">电话</span><a href="tel:+34600000000" class="c-di-val">+34 600 000 000</a></div>
+    <div class="c-di"><span class="c-di-lbl">Email</span><a href="/cdn-cgi/l/email-protection#1d74737b725d7b74737e7c6e786e6d74737c71337e7270" class="c-di-val"><span class="__cf_email__" data-cfemail="e1888f878ea187888f828092849291888f808dcf828e8c">[email&#160;protected]</span></a></div>
+    <div class="c-di"><span class="c-di-lbl">Referencia</span><span class="c-di-val" style="cursor:default">FSE-2025-MEN</span></div>
+  </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="ft-logo">Finca <b>S'Espinal</b></div>
+  <div class="ft-copy">© 2025 · 圣克利门特 · 马翁 · 梅诺卡岛 · 巴利阿里群岛 · 西班牙</div>
+  <div class="ft-badge">顶级庄园</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Marca el body como js-ready → activa animaciones
+  document.body.classList.add('js-ready');
+
+  // Nav sticky
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 50), {passive:true});
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.08});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Notif
+  setTimeout(() => {
+    const n = document.getElementById('notif');
+    n.classList.add('on');
+    setTimeout(() => n.classList.remove('on'), 5000);
+  }, 2800);
+
+  // Form
+  function submitForm(e) {
+    e.preventDefault();
+    const
