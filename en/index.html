@@ -581,7 +581,7 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
   </form>
   <div class="c-divider"><span>or contact us directly</span></div>
   <div class="c-direct">
-    <div class="c-di"><span class="c-di-lbl">Email</span><a href="mailto:info@fincasespinalmenorca.com" class="c-di-val">info@fincasespinalmenorca.com</a></div>
+    <div class="c-di"><span class="c-di-lbl">Email</span><a href="/cdn-cgi/l/email-protection#fd94939b92bd9b94939e9c8e988e8d94939c91909893928f9e9cd39e9290" class="c-di-val"><span class="__cf_email__" data-cfemail="8ce5e2eae3cceae5e2efedffe9fffce5e2ede0e1e9e2e3feefeda2efe3e1">[email&#160;protected]</span></a></div>
     <div class="c-di"><span class="c-di-lbl">Referencia</span><span class="c-di-val" style="cursor:default">FSE-2026-MEN</span></div>
   </div>
 </div>
@@ -596,7 +596,7 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.body.classList.add('js-ready');
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 50), {passive:true});
@@ -614,21 +614,7 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
     n.classList.add('on');
     setTimeout(() => n.classList.remove('on'), 5000);
   }, 2800);
-
   async function submitForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.f-submit');
-    const fields = e.target.querySelectorAll('input, select, textarea');
-    const labels = ['nombre','apellidos','email','telefono','interes','mensaje'];
-    const data = {};
-    fields.forEach((f, i) => { data[labels[i] || i] = f.value; });
-    data.timestamp = new Date().toLocaleString('es-ES');
-    data.idioma = document.documentElement.lang || 'es';
-    data.pagina = window.location.href;
-    btn.textContent = 'Enviando...';
-    btn.style.opacity = '0.7';
-    btn.disabled = true;
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycbwkr1xTxlfwkbnY05J4vXl3NVEFZjeATCQ65VdULeFZEeUEtrKkqpHdQ9AYvdu8oyXf/exec';  async function submitForm(e) {
     e.preventDefault();
     const form = e.target;
     const btn  = form.querySelector('.f-submit');
@@ -639,11 +625,9 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
     data.timestamp = new Date().toLocaleString('en-GB');
     data.idioma    = 'en';
     data.pagina    = window.location.href;
-
     btn.textContent = 'Sending...';
     btn.style.opacity = '0.7';
     btn.disabled = true;
-
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbwkr1xTxlfwkbnY05J4vXl3NVEFZjeATCQ65VdULeFZEeUEtrKkqpHdQ9AYvdu8oyXf/exec';
     try {
       await fetch(GAS_URL, {
@@ -652,7 +636,7 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
         headers: {'Content-Type': 'application/json'},
         body:    JSON.stringify(data)
       });
-      btn.textContent  = '✓ Request received — We will contact you within 24-48h';
+      btn.textContent = '✓ Request received — We will contact you within 24-48h';
       btn.style.background = '#3a4729';
       btn.style.color = '#d4ad70';
       btn.style.opacity = '1';
