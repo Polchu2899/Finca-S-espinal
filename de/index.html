@@ -628,8 +628,41 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
     btn.textContent = 'Enviando...';
     btn.style.opacity = '0.7';
     btn.disabled = true;
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbwkr1xTxlfwkbnY05J4vXl3NVEFZjeATCQ65VdULeFZEeUEtrKkqpHdQ9AYvdu8oyXf/exec';  async function submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn  = form.querySelector('.f-submit');
+    const fields = form.querySelectorAll('input, select, textarea');
+    const labels = ['nombre','apellidos','email','telefono','interes','mensaje'];
+    const data = {};
+    fields.forEach((f, i) => { data[labels[i] || i] = f.value; });
+    data.timestamp = new Date().toLocaleString('de-DE');
+    data.idioma    = 'de';
+    data.pagina    = window.location.href;
+
+    btn.textContent = 'Wird gesendet...';
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbwkr1xTxlfwkbnY05J4vXl3NVEFZjeATCQ65VdULeFZEeUEtrKkqpHdQ9AYvdu8oyXf/exec';
     try {
-      await fetch(GAS_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
-      btn.textContent = '✓ Solicitud recibida — Le contactaremos pronto';
-      btn.style.cssText = 'background:#3a4729;color:#d4ad70;padding:15px 28px;letter-spacing:.1em;cursor:defa
+      await fetch(GAS_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: {'Content-Type': 'application/json'},
+        body:    JSON.stringify(data)
+      });
+      btn.textContent  = '✓ Anfrage erhalten — Wir melden uns innerhalb von 24-48h';
+      btn.style.background = '#3a4729';
+      btn.style.color = '#d4ad70';
+      btn.style.opacity = '1';
+      form.querySelectorAll('input, select, textarea').forEach(f => f.value = '');
+    } catch(err) {
+      btn.textContent = 'Fehler. Bitte erneut versuchen.';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+    }
+  }
+</script>
+</body>
+</html>
