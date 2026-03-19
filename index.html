@@ -22,6 +22,22 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX');
+  // Cookie banner
+  (function() {
+    if (localStorage.getItem('cookies_accepted')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+      return;
+    }
+    document.getElementById('cookie-banner').style.display = 'flex';
+    document.getElementById('cookie-accept').onclick = function() {
+      localStorage.setItem('cookies_accepted', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
+    };
+    document.getElementById('cookie-reject').onclick = function() {
+      localStorage.setItem('cookies_accepted', 'essential');
+      document.getElementById('cookie-banner').style.display = 'none';
+    };
+  })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -298,6 +314,18 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
 .reveal { transition:opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1); }
 .js-ready .reveal { opacity:0; transform:translateY(24px); }
 .js-ready .reveal.in { opacity:1; transform:translateY(0); }
+
+/* ── COOKIE BANNER ── */
+#cookie-banner { position:fixed; bottom:0; left:0; right:0; background:rgba(20,18,12,.97); border-top:1px solid rgba(184,149,90,.25); padding:18px 32px; z-index:999; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+#cookie-banner p { font-size:.72rem; color:rgba(245,240,232,.6); margin:0; line-height:1.6; flex:1; min-width:200px; }
+#cookie-banner a { color:var(--gold); text-decoration:none; }
+#cookie-banner a:hover { text-decoration:underline; }
+.cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+.cookie-accept { background:var(--gold); color:var(--bg); border:none; padding:9px 22px; font-family:var(--sans); font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:all .3s; }
+.cookie-accept:hover { background:var(--goldl); }
+.cookie-reject { background:transparent; color:rgba(245,240,232,.4); border:1px solid rgba(245,240,232,.15); padding:9px 22px; font-family:var(--sans); font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:all .3s; }
+.cookie-reject:hover { border-color:rgba(245,240,232,.35); color:rgba(245,240,232,.7); }
+@media(max-width:600px){ #cookie-banner { flex-direction:column; padding:18px 20px; } .cookie-btns { width:100%; } .cookie-accept, .cookie-reject { flex:1; } }
 </style>
 </head>
 <body>
