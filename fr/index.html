@@ -20,22 +20,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX');
-  // Cookie banner
-  (function() {
-    if (localStorage.getItem('cookies_accepted')) {
-      document.getElementById('cookie-banner').style.display = 'none';
-      return;
-    }
-    document.getElementById('cookie-banner').style.display = 'flex';
-    document.getElementById('cookie-accept').onclick = function() {
-      localStorage.setItem('cookies_accepted', 'true');
-      document.getElementById('cookie-banner').style.display = 'none';
-    };
-    document.getElementById('cookie-reject').onclick = function() {
-      localStorage.setItem('cookies_accepted', 'essential');
-      document.getElementById('cookie-banner').style.display = 'none';
-    };
-  })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -677,5 +661,32 @@ footer { background:var(--bg2); padding:32px 60px; display:flex; justify-content
     }
   }
 </script>
+
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(20,18,12,.97);border-top:1px solid rgba(184,149,90,.25);padding:18px 32px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+  <p style="font-size:.72rem;color:rgba(245,240,232,.6);margin:0;line-height:1.6;flex:1;min-width:200px;">Nous utilisons des cookies pour améliorer votre expérience. En continuant à naviguer, vous acceptez notre <a href="/fr/politica-de-cookies/" target="_blank" style="color:#b8955a;">Politique de Cookies</a>.</p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="cookie-reject" style="background:transparent;color:rgba(245,240,232,.4);border:1px solid rgba(245,240,232,.15);padding:9px 22px;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;">Essentiels uniquement</button>
+    <button id="cookie-accept" style="background:#b8955a;color:#1a1610;border:none;padding:9px 22px;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;">Accepter</button>
+  </div>
+</div>
+
+  // Cookie banner
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    if (localStorage.getItem('cookies_accepted')) {
+      banner.style.display = 'none';
+      return;
+    }
+    banner.style.display = 'flex';
+    document.getElementById('cookie-accept').onclick = function() {
+      localStorage.setItem('cookies_accepted', 'true');
+      banner.style.display = 'none';
+    };
+    document.getElementById('cookie-reject').onclick = function() {
+      localStorage.setItem('cookies_accepted', 'essential');
+      banner.style.display = 'none';
+    };
+  })();
 </body>
 </html>
